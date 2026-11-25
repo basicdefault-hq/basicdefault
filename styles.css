@@ -386,7 +386,7 @@ nav a[aria-current="page"] {
 .senko .ember {
   fill: var(--s-ember);
 }
-.senko .bowl {
+.senko .holder {
   fill: var(--s-moss);
 }
 
@@ -450,7 +450,54 @@ nav a[aria-current="page"] {
 }
 
 .app-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
   margin: 1.75rem 0 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.15rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.app-links {
+  display: flex;
+  gap: 1.25rem;
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.app-links a,
+.doc-nav a,
+.doc a {
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 1.5px no-repeat;
+  transition: background-size 0.25s ease, color 0.2s ease;
+}
+.app-links a:hover,
+.doc-nav a:hover,
+.doc a:hover {
+  color: var(--ink);
+  background-size: 100% 1.5px;
 }
 .pill {
   display: inline-block;
@@ -476,6 +523,177 @@ nav a[aria-current="page"] {
   nav {
     gap: 1.25rem;
   }
+}
+
+/* Senko Timer support, privacy and terms */
+
+.doc-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 2rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.doc-nav a[aria-current="page"] {
+  color: var(--ink);
+  background-size: 100% 1.5px;
+}
+
+.draft {
+  max-width: 40rem;
+  margin: 0 0 2.5rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.75rem;
+  background: var(--wash);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.draft b {
+  font-weight: 500;
+  color: var(--accent-text);
+}
+
+.doc {
+  max-width: 40rem;
+}
+.doc h2 {
+  margin: 2.5rem 0 0.75rem;
+}
+.doc h2:first-child {
+  margin-top: 0;
+}
+.doc p,
+.doc li {
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.doc p {
+  margin: 0 0 1rem;
+}
+.doc ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+.doc li {
+  margin-bottom: 0.4rem;
+}
+.doc strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+.doc a {
+  color: var(--ink);
+}
+.updated {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+}
+
+.form {
+  display: grid;
+  gap: 1.75rem;
+  max-width: 40rem;
+}
+.form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.form legend,
+.form label.field {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.choice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.choice span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+.choice:hover span {
+  color: var(--ink);
+}
+.choice input:checked + span {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+.choice input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.form textarea {
+  display: block;
+  width: 100%;
+  min-height: 10rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+.form textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+.hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.context {
+  margin: 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.75rem;
+  background: var(--wash);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.context dl {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.2rem 1rem;
+  margin: 0.5rem 0 0;
+}
+.context dt {
+  color: var(--ink);
+}
+.context dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+.form-message {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--accent-text);
 }
 
 /* Footer */

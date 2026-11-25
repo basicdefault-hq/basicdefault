@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senko Timer support · basicDEFAULT</title>
+  <meta name="description" content="Report a bug, ask for a feature or send feedback about Senko Timer.">
+  <meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151311" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Senko Timer support · basicDEFAULT">
+  <meta property="og:description" content="Report a bug, ask for a feature or send feedback about Senko Timer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://basicdefault.com/senko-timer/support/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/CreatoDisplay-Regular.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/fonts/CreatoDisplay-Medium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#feedback">Skip to the form</a>
+
+  <header class="site-header wrap">
+    <a class="wordmark" href="/" aria-label="basicDEFAULT, home">basic<b>DEFAULT</b></a>
+    <nav aria-label="Main">
+      <a href="/#work">Work</a>
+      <a href="/apps/">Apps</a>
+      <a href="/#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-sub wrap">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span><a href="/apps/#senko-timer">Senko Timer</a></p>
+      <h1>Support<span class="accent">.</span></h1>
+      <p class="lede">
+        Found a bug, wished for something, or just want to say how it's going?
+        Tell me here. I read every note.
+      </p>
+      <nav class="doc-nav" aria-label="Senko Timer">
+        <a href="/senko-timer/support/" aria-current="page">Support</a>
+        <a href="/senko-timer/privacy/">Privacy</a>
+        <a href="/senko-timer/terms/">Terms</a>
+      </nav>
+    </section>
+
+    <section id="feedback" class="wrap section" aria-label="Feedback form">
+      <!--
+        TODO(feedback-backend): this form is a placeholder and sends nothing.
+        Point it at the server-side endpoint that files GitHub issues in
+        basicdefault-hq/senko-timer (token stays on the server, never here),
+        then remove the preventDefault handler below.
+      -->
+      <form class="form" id="feedback-form" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>What is it about?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="type" value="bug" required><span>Bug</span></label>
+            <label class="choice"><input type="radio" name="type" value="feature"><span>Feature request</span></label>
+            <label class="choice"><input type="radio" name="type" value="feedback" checked><span>Feedback</span></label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label class="field" for="message">Your note</label>
+          <textarea id="message" name="message" maxlength="5000" required
+            placeholder="What happened, or what would you like to see?"></textarea>
+          <p class="hint">For bugs, say what you did, what you expected and what happened instead. Please leave out anything personal.</p>
+        </div>
+
+        <!-- Filled from the link in the app's Settings (query parameters), when present. -->
+        <input type="hidden" name="app_version">
+        <input type="hidden" name="build">
+        <input type="hidden" name="os">
+        <input type="hidden" name="device">
+        <input type="hidden" name="posture">
+        <input type="hidden" name="theme">
+
+        <div class="context" id="context" hidden>
+          Sent along with your note, so I can reproduce it:
+          <dl id="context-list"></dl>
+        </div>
+
+        <div class="form-actions">
+          <button class="button" type="submit">Send</button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <span class="wordmark small">basic<b>DEFAULT</b></span>
+    <span>&copy; 2026. Made with care.</span>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("feedback-form");
+      var params = new URLSearchParams(window.location.search);
+
+      // type: accept the app's values loosely (bug, feature, feature_request, feature-request, feedback).
+      var typeAliases = {
+        bug: "bug",
+        feature: "feature",
+        feature_request: "feature",
+        "feature-request": "feature",
+        featurerequest: "feature",
+        feedback: "feedback"
+      };
+      var type = typeAliases[(params.get("type") || "").trim().toLowerCase()];
+      if (type) {
+        var radio = form.querySelector('input[name="type"][value="' + type + '"]');
+        if (radio) radio.checked = true;
+      }
+
+      var labels = {
+        app_version: "App version",
+        build: "Build",
+        os: "iOS",
+        device: "Device",
+        posture: "Posture",
+        theme: "Theme"
+      };
+      var list = document.getElementById("context-list");
+      var shown = 0;
+      Object.keys(labels).forEach(function (key) {
+        var value = (params.get(key) || "").trim().slice(0, 120);
+        if (!value) return;
+        form.elements[key].value = value;
+        var dt = document.createElement("dt");
+        var dd = document.createElement("dd");
+        dt.textContent = labels[key];
+        dd.textContent = value;
+        list.appendChild(dt);
+        list.appendChild(dd);
+        shown++;
+      });
+      if (shown) document.getElementById("context").hidden = false;
+
+      // TODO(feedback-backend): replace with a real submit once the endpoint exists.
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        document.getElementById("form-message").textContent =
+          "Sending isn't switched on yet. Thanks for your patience.";
+      });
+    })();
+  </script>
+</body>
+</html>
