@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apps · basicDEFAULT</title>
+  <meta name="description" content="Small apps built for me and my friends, starting with Senko Timer.">
+  <meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151311" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Apps · basicDEFAULT">
+  <meta property="og:description" content="Small apps built for me and my friends, starting with Senko Timer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://basicdefault.com/apps/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/CreatoDisplay-Regular.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/fonts/CreatoDisplay-Medium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#apps">Skip to apps</a>
+
+  <header class="site-header wrap">
+    <a class="wordmark" href="/" aria-label="basicDEFAULT, home">basic<b>DEFAULT</b></a>
+    <nav aria-label="Main">
+      <a href="/#work">Work</a>
+      <a href="/apps/" aria-current="page">Apps</a>
+      <a href="/#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-sub wrap">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Apps</p>
+      <h1>Small apps for me and my friends<span class="accent">.</span></h1>
+      <p class="lede">
+        Things we wished existed, so I built them. Made to be used every day,
+        not to scale.
+      </p>
+    </section>
+
+    <section id="apps" class="wrap section" aria-label="Apps">
+      <article class="app" id="senko-timer">
+        <div class="app-art senko" aria-hidden="true">
+          <svg viewBox="0 0 240 240" role="presentation">
+            <circle class="ring" cx="120" cy="120" r="96"/>
+            <circle class="ring faint" cx="120" cy="120" r="72"/>
+            <circle class="ring faintest" cx="120" cy="120" r="48"/>
+            <path class="smoke" d="M121 52c-8 10 8 16 0 26s8 14 0 22"/>
+            <rect class="stick" x="117" y="96" width="6" height="64" rx="3"/>
+            <rect class="ash" x="117" y="96" width="6" height="10" rx="3"/>
+            <circle class="ember" cx="120" cy="96" r="3.5"/>
+            <path class="bowl" d="M76 160h88a44 30 0 0 1-88 0z"/>
+          </svg>
+        </div>
+
+        <div class="app-body">
+          <p class="app-meta">iPhone · designed for iPhone Duo first</p>
+          <h2 class="app-name">Senko Timer</h2>
+          <p class="app-lede">
+            A calm, repeatable timer. Set a time on the ripple dial, save it
+            with a name, and run it again in one tap. While it runs, a stick
+            of incense burns down in a bowl.
+          </p>
+
+          <ul class="features">
+            <li><b>Ripple dial.</b> Set the time by feel instead of typing numbers.</li>
+            <li><b>Saved timers.</b> Name the ones you use and start them in one tap.</li>
+            <li><b>Steps and repeats.</b> Chain steps like work and rest, and run them as many times as you need.</li>
+            <li><b>Lock Screen and Dynamic Island.</b> Keep an eye on the time without opening the app.</li>
+            <li><b>Made for every fold.</b> Its own layout closed, open and propped up like a tent, and on a regular iPhone too.</li>
+          </ul>
+
+          <p class="app-status"><span class="pill">In development</span></p>
+        </div>
+      </article>
+
+      <p class="more">More apps on the way.</p>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <span class="wordmark small">basic<b>DEFAULT</b></span>
+    <span>&copy; 2026. Made with care.</span>
+  </footer>
+</body>
+</html>
