@@ -348,60 +348,93 @@ nav a[aria-current="page"] {
   height: auto;
 }
 
-/* Senko Timer's own palette: sage and stone, with an ember */
-.senko {
-  --s-ground: #e7e6df;
-  --s-track: #d1d1c8;
-  --s-ink: #2b2e2a;
-  --s-moss: #5c6e4e;
-  --s-bamboo: #d8c9a3;
-  --s-ash: #a3a69c;
-  --s-ember: #b5653f;
-  background: var(--s-ground);
+/* Apps pages: Senko Timer's sage and stone, with an ember accent */
+.apps-theme {
+  --paper: #ecebe4;
+  --ink: #2b2e2a;
+  --muted: #5d615a;
+  --line: #d6d5cc;
+  --accent: #b5653f;
+  --accent-text: #9a522f;
+  --wash: #e1e0d7;
+  --panel: #e4e3db;
+  --sage: #a8b598;
 }
-.senko .ring {
-  fill: none;
-  stroke: var(--s-track);
-  stroke-width: 1.5;
+@media (prefers-color-scheme: dark) {
+  .apps-theme {
+    --paper: #161814;
+    --ink: #e7e6df;
+    --muted: #9da394;
+    --line: #2b2e28;
+    --accent: #d2865f;
+    --accent-text: #e09a74;
+    --wash: #20231e;
+    --panel: #1d201b;
+    --sage: #a8b598;
+  }
 }
-.senko .ring.faint {
-  opacity: 0.7;
-}
-.senko .ring.faintest {
-  opacity: 0.45;
-}
-.senko .smoke {
-  fill: none;
-  stroke: var(--s-ash);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  opacity: 0.8;
-}
-.senko .stick {
-  fill: var(--s-bamboo);
-}
-.senko .ash {
-  fill: var(--s-ash);
-}
-.senko .ember {
-  fill: var(--s-ember);
-}
-.senko .holder {
-  fill: var(--s-moss);
+.apps-theme ::selection {
+  background: var(--accent);
 }
 
+.app-art {
+  background: var(--panel);
+}
+.app-icon {
+  width: 58%;
+  aspect-ratio: 1;
+  border-radius: 22.5%;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgb(35 38 33 / 0.12), 0 18px 40px -12px rgb(35 38 33 / 0.35);
+}
+.app-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* The icon, drawn from the app's running screen */
+.senko-icon {
+  --s-sage: #a8b598;
+  --s-track: #95a385;
+  --s-ink: #232621;
+  --s-ground: #e7e6df;
+  --s-bamboo: #d8c9a3;
+  --s-ash: #dcdbd2;
+  --s-burnt: #8f8e86;
+  --s-ember: #b5653f;
+}
+.senko-icon .bg { fill: var(--s-sage); }
+.senko-icon .ring { fill: none; stroke: var(--s-track); stroke-width: 0.8; }
+.senko-icon .ring.faint { opacity: 0.6; }
+.senko-icon .ring.faintest { opacity: 0.35; }
+.senko-icon .smoke {
+  fill: none;
+  stroke: var(--s-ground);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+.senko-icon .holder,
+.senko-icon .mound,
+.senko-icon .stick { fill: var(--s-ink); }
+.senko-icon .bed { fill: var(--s-ash); }
+.senko-icon .core { stroke: var(--s-bamboo); stroke-width: 1.4; }
+.senko-icon .ash { fill: var(--s-burnt); }
+.senko-icon .ember { fill: var(--s-ember); }
+
 @media (prefers-reduced-motion: no-preference) {
-  .senko .smoke {
-    stroke-dasharray: 80;
+  .senko-icon .smoke {
+    stroke-dasharray: 40;
     animation: drift 6s ease-in-out infinite;
   }
-  .senko .ember {
+  .senko-icon .ember {
     animation: glow 3s ease-in-out infinite;
   }
   @keyframes drift {
-    0% { stroke-dashoffset: 80; opacity: 0; }
-    30% { opacity: 0.8; }
-    100% { stroke-dashoffset: -80; opacity: 0; }
+    0% { stroke-dashoffset: 40; opacity: 0; }
+    30% { opacity: 0.85; }
+    100% { stroke-dashoffset: -40; opacity: 0; }
   }
   @keyframes glow {
     50% { opacity: 0.55; }

@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apps · basicDEFAULT</title>
-  <meta name="description" content="Small apps built for me and my friends, starting with Senko Timer.">
-  <meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151311" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Little apps made for the fun of it, starting with Senko Timer.">
+  <meta name="theme-color" content="#ECEBE4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#161814" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Apps · basicDEFAULT">
-  <meta property="og:description" content="Small apps built for me and my friends, starting with Senko Timer.">
+  <meta property="og:description" content="Little apps made for the fun of it, starting with Senko Timer.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://basicdefault.com/apps/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -16,7 +16,7 @@
   <link rel="preload" href="/fonts/CreatoDisplay-Medium.otf" as="font" type="font/otf" crossorigin>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="apps-theme">
   <a class="skip" href="#apps">Skip to apps</a>
 
   <header class="site-header wrap">
@@ -31,42 +31,48 @@
   <main>
     <section class="hero hero-sub wrap">
       <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Apps</p>
-      <h1>Small apps for me and my friends<span class="accent">.</span></h1>
+      <h1>Apps for fun<span class="accent">.</span></h1>
       <p class="lede">
-        Things we wished existed, so I built them. Small, calm apps, made
-        with care.
+        Little things I wanted to exist, made for me and my friends. Each one
+        does one job, quietly and well, and is a small pleasure to use.
       </p>
     </section>
 
     <section id="apps" class="wrap section" aria-label="Apps">
       <article class="app" id="senko-timer">
-        <div class="app-art senko" aria-hidden="true">
-          <svg viewBox="0 0 240 240" role="presentation">
-            <circle class="ring" cx="120" cy="120" r="96"/>
-            <circle class="ring faint" cx="120" cy="120" r="72"/>
-            <circle class="ring faintest" cx="120" cy="120" r="48"/>
-            <path class="smoke" d="M121 52c-8 10 8 16 0 26s8 14 0 22"/>
-            <rect class="stick" x="117" y="96" width="6" height="64" rx="3"/>
-            <rect class="ash" x="117" y="96" width="6" height="10" rx="3"/>
-            <circle class="ember" cx="120" cy="96" r="3.5"/>
-            <rect class="holder" x="68" y="158" width="104" height="10" rx="5"/>
-          </svg>
+        <div class="app-art" aria-hidden="true">
+          <div class="app-icon">
+            <svg class="senko-icon" viewBox="0 0 100 100" role="presentation">
+              <rect class="bg" width="100" height="100"/>
+              <circle class="ring" cx="50" cy="50" r="40"/>
+              <circle class="ring faint" cx="50" cy="50" r="30"/>
+              <circle class="ring faintest" cx="50" cy="50" r="20"/>
+              <path class="smoke" d="M50 22c-3.5 4 3.5 6 0 10s3.5 6 0 10" transform="translate(0 -20)"/>
+              <ellipse class="holder" cx="50" cy="77.5" rx="29" ry="7.5"/>
+              <ellipse class="bed" cx="50" cy="75" rx="26" ry="4"/>
+              <path class="mound" d="M44 75.5Q50 66 56 75.5Z"/>
+              <line class="core" x1="50" y1="71" x2="50" y2="62"/>
+              <rect class="stick" x="48.3" y="31" width="3.4" height="31.5" rx="0.6"/>
+              <rect class="ember" x="48.3" y="29.2" width="3.4" height="2.4"/>
+              <rect class="ash" x="48.3" y="24" width="3.4" height="5.6" rx="1"/>
+            </svg>
+          </div>
         </div>
 
         <div class="app-body">
           <p class="app-meta">iPhone · designed for iPhone Duo first</p>
           <h2 class="app-name">Senko Timer</h2>
           <p class="app-lede">
-            A calm, repeatable timer. Set a time on the ripple dial, save it
-            with a name, and run it again in one tap. While it runs, a stick
-            of incense burns down.
+            A calm timer you'll come back to. Turn the ripple dial to set the
+            time, give it a name, and it's one tap away next time. While it
+            runs, a stick of incense slowly burns down.
           </p>
 
           <ul class="features">
-            <li><b>Ripple dial.</b> Set the time by feel instead of typing numbers.</li>
-            <li><b>Saved timers.</b> Name the ones you use and start them in one tap.</li>
-            <li><b>Steps and repeats.</b> Chain steps like work and rest, and run them as many times as you need.</li>
-            <li><b>Made for every fold.</b> Its own layout closed, open and propped up like a tent, and on a regular iPhone too.</li>
+            <li><b>Ripple dial.</b> Set the time by feel, not by typing numbers.</li>
+            <li><b>Saved timers.</b> Name the ones you use most and start them in one tap.</li>
+            <li><b>Steps and repeats.</b> Chain steps like work and rest, and go round as many times as you like.</li>
+            <li><b>Made for every fold.</b> A layout for closed, open and propped up like a tent, and for a regular iPhone too.</li>
           </ul>
 
           <div class="app-status">
@@ -74,16 +80,10 @@
             <!-- TODO(beta): placeholder. Replace href with the TestFlight link or beta sign-up once one exists. -->
             <a class="button" href="#senko-timer" data-placeholder="beta">Join the beta</a>
           </div>
-
-          <p class="app-links">
-            <a href="/senko-timer/support/">Support</a>
-            <a href="/senko-timer/privacy/">Privacy</a>
-            <a href="/senko-timer/terms/">Terms</a>
-          </p>
         </div>
       </article>
 
-      <p class="more">More apps on the way.</p>
+      <p class="more">More on the way, whenever they're ready.</p>
     </section>
   </main>
 

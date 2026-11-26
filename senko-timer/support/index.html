@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Senko Timer support · basicDEFAULT</title>
   <meta name="description" content="Report a bug, ask for a feature or send feedback about Senko Timer.">
-  <meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151311" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ECEBE4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#161814" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Senko Timer support · basicDEFAULT">
   <meta property="og:description" content="Report a bug, ask for a feature or send feedback about Senko Timer.">
   <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
   <link rel="preload" href="/fonts/CreatoDisplay-Medium.otf" as="font" type="font/otf" crossorigin>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="apps-theme">
   <a class="skip" href="#feedback">Skip to the form</a>
 
   <header class="site-header wrap">
@@ -98,9 +98,10 @@
       var form = document.getElementById("feedback-form");
       var params = new URLSearchParams(window.location.search);
 
-      // type: accept the app's values loosely (bug, feature, feature_request, feature-request, feedback).
+      // type: the app sends bug, request or feedback; accept a few spellings of each.
       var typeAliases = {
         bug: "bug",
+        request: "feature",
         feature: "feature",
         feature_request: "feature",
         "feature-request": "feature",
@@ -116,7 +117,7 @@
       var labels = {
         app_version: "App version",
         build: "Build",
-        os: "iOS",
+        os: "System",
         device: "Device",
         posture: "Posture",
         theme: "Theme"
