@@ -18,25 +18,15 @@
 }
 
 :root {
-  --paper: #f6f3ec;
-  --ink: #1a1714;
-  --muted: #6f675d;
-  --line: #e2dccf;
-  --accent: #ff5a1f;
-  --accent-text: #c2410c;
-  --wash: #efe9dd;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #151311;
-    --ink: #f3eee4;
-    --muted: #a09787;
-    --line: #2c2823;
-    --accent: #ff6a33;
-    --accent-text: #ff8a5c;
-    --wash: #1e1b18;
-  }
+  color-scheme: light;
+  --paper: #ecebe4;
+  --ink: #2b2e2a;
+  --muted: #5d615a;
+  --line: #d6d5cc;
+  --accent: #b5653f;
+  --accent-text: #9a522f;
+  --wash: #e1e0d7;
+  --panel: #e4e3db;
 }
 
 *,
@@ -346,35 +336,6 @@ nav a[aria-current="page"] {
 .app-art svg {
   width: 78%;
   height: auto;
-}
-
-/* Apps pages: Senko Timer's sage and stone, with an ember accent */
-.apps-theme {
-  --paper: #ecebe4;
-  --ink: #2b2e2a;
-  --muted: #5d615a;
-  --line: #d6d5cc;
-  --accent: #b5653f;
-  --accent-text: #9a522f;
-  --wash: #e1e0d7;
-  --panel: #e4e3db;
-  --sage: #a8b598;
-}
-@media (prefers-color-scheme: dark) {
-  .apps-theme {
-    --paper: #161814;
-    --ink: #e7e6df;
-    --muted: #9da394;
-    --line: #2b2e28;
-    --accent: #d2865f;
-    --accent-text: #e09a74;
-    --wash: #20231e;
-    --panel: #1d201b;
-    --sage: #a8b598;
-  }
-}
-.apps-theme ::selection {
-  background: var(--accent);
 }
 
 .app-art {

@@ -15,5 +15,5 @@ Then open http://localhost:4173.
 ## Editing
 
 - **Work list:** each entry is an `<li class="item">` in `index.html`. To link one once it is live, wrap the `<h3>` text in `<a href="...">`; the arrow and underline appear on their own.
-- **Colours:** tokens at the top of `styles.css` (light and dark). The accent is the orange from the video graphics, `#FF5A1F`.
+- **Colours:** tokens at the top of `styles.css`, shared by every page. Light only: sage and stone from Senko Timer, with the ember accent `#B5653F`.
 - **Type:** Creato Display (SIL OFL, licence in `fonts/OFL.txt`).
