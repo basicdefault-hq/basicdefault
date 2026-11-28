@@ -105,14 +105,14 @@ a:focus-visible {
 .site-header .wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
 }
-.wordmark .mark {
-  width: 1.65rem;
-  height: 1.65rem;
-  flex: none;
+.logo-row {
+  display: block;
+  height: 1.6rem;
+  width: auto;
+  color: var(--ink);
 }
-.wordmark .mark-dot {
+.logo-dot {
   fill: var(--accent);
 }
 .wordmark b {
@@ -704,6 +704,54 @@ nav a[aria-current="page"] {
   margin: 0;
   font-size: 0.95rem;
   color: var(--accent-text);
+}
+
+/* Welcome screen (home page, once per visit) */
+
+.intro-screen {
+  display: none;
+}
+html.intro {
+  overflow: hidden;
+}
+html.intro .intro-screen {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--paper);
+  cursor: pointer;
+  transition: background-color 0.6s ease 0.15s;
+}
+html.intro .site-header .logo-row {
+  visibility: hidden;
+}
+.intro-logo {
+  width: min(72vw, 26rem);
+  height: auto;
+  color: var(--ink);
+  transform-origin: 0 0;
+  transition: transform 0.75s cubic-bezier(0.65, 0, 0.25, 1);
+}
+.intro-cell {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.17s ease-in;
+}
+.intro-cell .lt,
+.intro-cell.on .sq {
+  display: none;
+}
+.intro-cell.on .lt {
+  display: inline;
+}
+.intro-dot.off {
+  opacity: 0;
+}
+html.intro-leaving .intro-screen {
+  background-color: transparent;
+  pointer-events: none;
 }
 
 /* Footer */

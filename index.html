@@ -14,12 +14,16 @@
   <link rel="preload" href="fonts/CreatoDisplay-Regular.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" href="fonts/CreatoDisplay-Medium.otf" as="font" type="font/otf" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <script>try{if(!sessionStorage.getItem("bdhq-intro")&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}</script>
 </head>
 <body>
+  <div class="intro-screen" aria-hidden="true">
+    <svg class="intro-logo" viewBox="51 51 203 47"><g fill="currentColor"><g class="intro-cell"><g class="sq"><rect x="52" y="52" width="44" height="44" rx="12"/></g><g class="lt" fill-rule="evenodd"><path d="M64 52H84A12 12 0 0 1 96 64V66.17A2 2 0 0 1 95.41 67.59L90.41 72.59A2 2 0 0 0 90.41 75.41L95.41 80.41A2 2 0 0 1 96 81.83V84A12 12 0 0 1 84 96H64A12 12 0 0 1 52 84V64A12 12 0 0 1 64 52ZM67 62.5H75.7A3 3 0 0 1 77.82 67.62L75.82 69.62A3 3 0 0 1 73.7 70.5H67A3 3 0 0 1 64 67.5V65.5A3 3 0 0 1 67 62.5ZM67 77.5H73.7A3 3 0 0 1 75.82 78.38L77.82 80.38A3 3 0 0 1 75.7 85.5H67A3 3 0 0 1 64 82.5V80.5A3 3 0 0 1 67 77.5Z"/></g></g><g class="intro-cell"><g class="sq"><rect x="104" y="52" width="44" height="44" rx="12"/></g><g class="lt" fill-rule="evenodd"><path d="M116 52H126A22 22 0 0 1 126 96H116A12 12 0 0 1 104 84V64A12 12 0 0 1 116 52ZM118 66H124A8 8 0 0 1 124 82H118Z"/></g></g><g class="intro-cell"><g class="sq"><rect x="156" y="52" width="44" height="44" rx="12"/></g><g class="lt" fill-rule="evenodd"><path transform="translate(104 -52)" d="M64 104H68V118H80V104H84A12 12 0 0 1 96 116V136A12 12 0 0 1 84 148H80V134H68V148H64A12 12 0 0 1 52 136V116A12 12 0 0 1 64 104Z"/></g></g><g class="intro-cell"><g class="sq"><circle class="logo-dot" cx="230" cy="74" r="21"/></g><g class="lt" fill-rule="evenodd"><path transform="translate(104 -52)" d="M146.84 133.05A22 22 0 1 0 133.05 146.84A10 10 0 0 1 146.84 133.05ZM117 126A9 9 0 1 0 135 126A9 9 0 1 0 117 126Z"/><circle class="logo-dot intro-dot" cx="245.5" cy="89.5" r="7"/></g></g></g></svg>
+  </div>
   <a class="skip" href="#work">Skip to work</a>
 
   <header class="site-header wrap">
-    <a class="wordmark" href="/" aria-label="basicDEFAULT, home"><svg class="mark" viewBox="51 51 102 102" aria-hidden="true"><g fill="currentColor"><rect x="52" y="52" width="44" height="44" rx="12"/><rect x="104" y="52" width="44" height="44" rx="12"/><rect x="52" y="104" width="44" height="44" rx="12"/></g><circle class="mark-dot" cx="126" cy="126" r="21"/></svg><span>basic<b>DEFAULT</b></span></a>
+    <a class="wordmark" href="/" aria-label="BDHQ, basicDEFAULT home"><svg class="logo-row" viewBox="51 51 203 47" aria-hidden="true"><g fill="currentColor" fill-rule="evenodd"><path d="M64 52H84A12 12 0 0 1 96 64V66.17A2 2 0 0 1 95.41 67.59L90.41 72.59A2 2 0 0 0 90.41 75.41L95.41 80.41A2 2 0 0 1 96 81.83V84A12 12 0 0 1 84 96H64A12 12 0 0 1 52 84V64A12 12 0 0 1 64 52ZM67 62.5H75.7A3 3 0 0 1 77.82 67.62L75.82 69.62A3 3 0 0 1 73.7 70.5H67A3 3 0 0 1 64 67.5V65.5A3 3 0 0 1 67 62.5ZM67 77.5H73.7A3 3 0 0 1 75.82 78.38L77.82 80.38A3 3 0 0 1 75.7 85.5H67A3 3 0 0 1 64 82.5V80.5A3 3 0 0 1 67 77.5Z"/><path d="M116 52H126A22 22 0 0 1 126 96H116A12 12 0 0 1 104 84V64A12 12 0 0 1 116 52ZM118 66H124A8 8 0 0 1 124 82H118Z"/><path transform="translate(104 -52)" d="M64 104H68V118H80V104H84A12 12 0 0 1 96 116V136A12 12 0 0 1 84 148H80V134H68V148H64A12 12 0 0 1 52 136V116A12 12 0 0 1 64 104Z"/><path transform="translate(104 -52)" d="M146.84 133.05A22 22 0 1 0 133.05 146.84A10 10 0 0 1 146.84 133.05ZM117 126A9 9 0 1 0 135 126A9 9 0 1 0 117 126Z"/></g><circle class="logo-dot" cx="245.5" cy="89.5" r="7"/></svg></a>
     <nav aria-label="Main">
       <a href="#work">Work</a>
       <a href="/apps/">Apps</a>
@@ -107,5 +111,48 @@
     <span class="wordmark small">basic<b>DEFAULT</b></span>
     <span>&copy; 2026. Made with care.</span>
   </footer>
+  <script>
+  (function () {
+    var root = document.documentElement;
+    if (!root.classList.contains("intro")) return;
+    var screen = document.querySelector(".intro-screen");
+    var logo = screen.querySelector(".intro-logo");
+    var cells = [].slice.call(logo.querySelectorAll(".intro-cell"));
+    var dot = logo.querySelector(".intro-dot");
+    var target = document.querySelector(".site-header .logo-row");
+    var timers = [], done = false;
+    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+    function finish() {
+      root.classList.remove("intro", "intro-leaving");
+      try { sessionStorage.setItem("bdhq-intro", "1"); } catch (e) {}
+    }
+    function reveal() {
+      if (done) return;
+      done = true;
+      timers.forEach(clearTimeout);
+      cells.forEach(function (c) { c.classList.add("on"); c.style.transform = ""; });
+      dot.classList.remove("off");
+      var a = logo.getBoundingClientRect(), b = target.getBoundingClientRect();
+      logo.style.transform = "translate(" + (b.left - a.left) + "px," + (b.top - a.top) + "px) scale(" + (b.width / a.width) + ")";
+      root.classList.add("intro-leaving");
+      setTimeout(finish, 800);
+    }
+    // 1. Tiles flip into letters, one at a time
+    cells.forEach(function (c, i) {
+      later(function () {
+        c.style.transform = "scaleX(0)";
+        later(function () { c.classList.add("on"); c.style.transform = "scaleX(1)"; }, 170);
+      }, 450 + i * 120);
+    });
+    // 2. The Q's dot flashes three times, like a cursor
+    [1500, 1750, 2000, 2250, 2500, 2750].forEach(function (ms, i) {
+      later(function () { dot.classList.toggle("off", i % 2 === 0); }, ms);
+    });
+    // 3. The logo moves into the header and the site appears
+    later(reveal, 3150);
+    screen.addEventListener("click", reveal);
+    window.addEventListener("keydown", reveal, { once: true });
+  })();
+  </script>
 </body>
 </html>
