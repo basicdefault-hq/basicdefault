@@ -115,6 +115,63 @@ a:focus-visible {
 .logo-dot {
   fill: var(--accent);
 }
+
+/* Header logo: on hover, the letters flip to tiles and back, one at a time */
+.hcell {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: none 1.2s ease-in-out both;
+}
+.hcell .sq {
+  opacity: 0;
+}
+.hcell .sq,
+.hcell .lt {
+  animation: none 1.2s linear both;
+}
+.hcell:nth-child(2),
+.hcell:nth-child(2) > g {
+  animation-delay: 0.08s;
+}
+.hcell:nth-child(3),
+.hcell:nth-child(3) > g {
+  animation-delay: 0.16s;
+}
+.hcell:nth-child(4),
+.hcell:nth-child(4) > g {
+  animation-delay: 0.24s;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .wordmark:hover .hcell,
+  .wordmark:focus-visible .hcell {
+    animation-name: logo-flip;
+  }
+  .wordmark:hover .hcell .sq,
+  .wordmark:focus-visible .hcell .sq {
+    animation-name: logo-tiles;
+  }
+  .wordmark:hover .hcell .lt,
+  .wordmark:focus-visible .hcell .lt {
+    animation-name: logo-letters;
+  }
+}
+@keyframes logo-flip {
+  0% { transform: scaleX(1); }
+  10% { transform: scaleX(0); }
+  20%, 55% { transform: scaleX(1); }
+  65% { transform: scaleX(0); }
+  75%, 100% { transform: scaleX(1); }
+}
+@keyframes logo-tiles {
+  0%, 10% { opacity: 0; }
+  10.1%, 65% { opacity: 1; }
+  65.1%, 100% { opacity: 0; }
+}
+@keyframes logo-letters {
+  0%, 10% { opacity: 1; }
+  10.1%, 65% { opacity: 0; }
+  65.1%, 100% { opacity: 1; }
+}
 .wordmark b {
   font-weight: 700;
   letter-spacing: 0;
