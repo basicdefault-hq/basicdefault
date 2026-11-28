@@ -35,6 +35,12 @@
         Found a bug, wished for something, or just want to say how it's going?
         Tell me here. I read every note.
       </p>
+      <p class="lede">
+        Bugs or anything not working:
+        <a href="mailto:support@basicdefault.com">support@basicdefault.com</a><br>
+        Everything else:
+        <a href="mailto:hello@basicdefault.com">hello@basicdefault.com</a>
+      </p>
       <nav class="doc-nav" aria-label="Senko Timer">
         <a href="/senko-timer/support/" aria-current="page">Support</a>
         <a href="/senko-timer/privacy/">Privacy</a>
@@ -138,10 +144,27 @@
       if (shown) document.getElementById("context").hidden = false;
 
       // TODO(feedback-backend): replace with a real submit once the endpoint exists.
+      // Until then, Send opens an email with the note and details filled in.
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+        var note = form.elements.message.value.trim();
+        if (!note) {
+          document.getElementById("form-message").textContent = "Write a note first.";
+          return;
+        }
+        var kind = (form.querySelector('input[name="type"]:checked') || {}).value || "feedback";
+        var to = kind === "bug" ? "support@basicdefault.com" : "hello@basicdefault.com";
+        var subjects = { bug: "Bug", feature: "Feature request", feedback: "Feedback" };
+        var body = note;
+        var details = Object.keys(labels)
+          .filter(function (key) { return form.elements[key].value; })
+          .map(function (key) { return labels[key] + ": " + form.elements[key].value; });
+        if (details.length) body += "\n\n---\n" + details.join("\n");
+        window.location.href = "mailto:" + to +
+          "?subject=" + encodeURIComponent("Senko Timer: " + subjects[kind]) +
+          "&body=" + encodeURIComponent(body);
         document.getElementById("form-message").textContent =
-          "Sending isn't switched on yet. Thanks for your patience.";
+          "Your email app should open with your note. If it doesn't, write to " + to + ".";
       });
     })();
   </script>
