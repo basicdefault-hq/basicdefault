@@ -13,7 +13,8 @@ Four tiles that flip into the letters B, D, H and Q. The dot is the one constant
 | `bdhq-row-cursor.svg` / `-light.svg` | The row with the Q's tail blinking like a text cursor. For intros and hero spots; still, it's the plain row. |
 | `bdhq-row-animated.svg` / `-light.svg` | The row flipping between plain tiles and letters, one tile at a time. |
 | `bdhq-avatar-tiles.svg`, `bdhq-avatar-letters.svg` | Round avatars: cream on sage. |
-| `favicon.svg` | Site favicon (tiles). Switches to light tiles in dark browser chrome. Copied to the site root. |
+| `favicon.svg` | Site favicon: the round tiles avatar. Copied to the site root, with `favicon-48.png` as a fallback. |
+| `apple-touch-icon.svg` | iPhone home-screen icon: cream letters on a full sage square (iOS rounds the corners). Exported to the site root as `apple-touch-icon.png`. |
 | `png/` | PNG exports: 800px avatars (YouTube and socials), 1024px marks and a 1624px horizontal row, all with transparent backgrounds. |
 
 ## Rules
