@@ -19,14 +19,14 @@
 
 :root {
   color-scheme: light;
-  --paper: #ecebe4;
-  --ink: #2b2e2a;
-  --muted: #5d615a;
-  --line: #d6d5cc;
-  --accent: #b5653f;
-  --accent-text: #9a522f;
-  --wash: #e1e0d7;
-  --panel: #e4e3db;
+  --paper: #f5e4d7;
+  --ink: #3e4d44;
+  --muted: #5b6b61;
+  --line: #d9cbc2;
+  --accent: #839788;
+  --accent-text: #56695e;
+  --wash: #e5d1d0;
+  --panel: #eedcd2;
 }
 
 *,
