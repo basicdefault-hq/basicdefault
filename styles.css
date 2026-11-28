@@ -98,12 +98,14 @@ a:focus-visible {
 }
 
 .wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
   font-weight: 400;
+}
+.site-header .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 .wordmark .mark {
   width: 1.65rem;
